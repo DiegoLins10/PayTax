@@ -15,16 +15,15 @@ namespace PayTax.Entities
 
         public override double Tax()
         {
-           double tax;
-           if(AnualInCome <= 20000.0)
+            if (AnualInCome <= 20000.0)
             {
-                tax = 0.15; 
+                return (AnualInCome * 0.15) - (HealthExpenditures * 0.50);
             }
             else
             {
-                tax = 0.25;
+                return (AnualInCome * 0.25) - (HealthExpenditures * 0.50);
             }
-            return (AnualInCome * tax) - (HealthExpenditures * 0.50);
+
         }
     }
 }
